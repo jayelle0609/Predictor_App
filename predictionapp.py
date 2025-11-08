@@ -26,7 +26,7 @@ uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
 else:
-    st.info("Using default sample dataset")
+    st.info("Using default sample dataset (that Jia Ling made)")
     df = pd.read_csv("sample.csv")  # Ensure sample.csv exists
 
 st.write("Data preview:")
@@ -412,7 +412,7 @@ elif input_choice == "Upload CSV":
     else:
         # Use default test.csv if no upload
         test_df = pd.read_csv("test.csv")  
-        st.info("Using default sample dataset")
+        st.info("Using default sample dataset (that Jia Ling made)")
 # Fill missing values for numeric and categorical columns
 for col in X.columns:
     if col not in test_df.columns:
