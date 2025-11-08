@@ -14,6 +14,11 @@ from catboost import CatBoostRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from PIL import Image
+
+pred_img = Image.open("pred.png")
+
+st.image(pred_img, caption="Supervised Learning", use_column_width=True)
 
 st.set_page_config(layout="wide")
 st.title("Prediction App using Regression")
