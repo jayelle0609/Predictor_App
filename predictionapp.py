@@ -360,6 +360,7 @@ fig_combined.update_xaxes(title_text="Actual Values", row=1, col=2)
 fig_combined.update_yaxes(title_text="Predicted Values", row=1, col=2)
 fig_combined.update_layout(showlegend=True, height=500, width=1000)
 st.plotly_chart(fig_combined, use_container_width=True)
+
 # -------------------------------
 # Forecasting / Prediction Section
 # -------------------------------
@@ -378,6 +379,7 @@ model_choice = st.radio(
     options=[f"Baseline: {best_model_name}", "After Hyperparameter Tuning"]
 )
 
+# Define selected model pipeline
 if "Baseline" in model_choice:
     selected_pred_model = Pipeline([('preprocessor', preprocessor), ('model', models[best_model_name])])
     selected_pred_model.fit(X_train, y_train)
@@ -409,36 +411,32 @@ elif input_choice == "Upload CSV":
         test_df = pd.read_csv(uploaded_test)
     else:
         # Use default test.csv if no upload
-        test_df = pd.read_csv("test.csv")
+        test_df = pd.read_csv("test.csv")  # make sure this file exists
 
-    # Fill missing values
-    for col in X.columns:
-        if col in numeric_cols:
-            test_df[col] = pd.to_numeric(test_df[col], errors='coerce').fillna(X_train[col].mean())
-        else:
-            default_cat = X_train[col].mode()[0]
-            test_df[col] = test_df[col].fillna(default_cat)
-
-# Lowercase categorical and ordinal columns to match training
-for col in categorical_cols + ordinal_cols:
-    if col in test_df.columns:
-        test_df[col] = test_df[col].astype(str).str.lower()
+# Fill missing values for numeric and categorical columns
+for col in X.columns:
+    if col not in test_df.columns:
+        test_df[col] = np.nan  # ensure column exists
+    if col in numeric_cols:
+        test_df[col] = pd.to_numeric(test_df[col], errors='coerce').fillna(X_train[col].mean())
+    else:
+        test_df[col] = test_df[col].fillna(X_train[col].mode()[0])
+        test_df[col] = test_df[col].astype(str).str.lower()  # lowercase to match training
 
 # Drop columns the user dropped during training
 if cols_to_drop:
     test_df = test_df.drop(columns=[c for c in cols_to_drop if c in test_df.columns])
 
-# -------------------------------
 # Predict button
-# -------------------------------
 if st.button("Predict"):
     if not test_df.empty:
         try:
+            # Pass through pipeline (preprocessing + model)
             y_test_pred = selected_pred_model.predict(test_df)
             test_df[f'Predicted {target_col}'] = y_test_pred
             st.write(test_df[[f'Predicted {target_col}']])
 
-            # Allow user to download
+            # Download button
             csv_bytes = test_df.to_csv(index=False).encode('utf-8')
             st.download_button(
                 label="Download Predictions as CSV",
