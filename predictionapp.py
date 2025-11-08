@@ -325,7 +325,7 @@ ord_features = ordinal_cols if ordinal_cols else []
 all_features = np.concatenate([num_features, cat_features, ord_features])
 
 # Create subplot: 1 row, 2 columns
-fig_combined = make_subplots(rows=1, cols=2, subplot_titles=("Feature Contributions / Coefficients", "Predicted vs Actual"))
+fig_combined = make_subplots(rows=1, cols=2, subplot_titles=("Feature Coefficients", "Predicted vs Actual"))
 
 # Left: Feature contributions
 if selected_model_name in ['Linear Regression', 'Ridge Regression', 'Lasso Regression']:
@@ -334,7 +334,7 @@ if selected_model_name in ['Linear Regression', 'Ridge Regression', 'Lasso Regre
     coef_df = pd.DataFrame({'Feature': all_features, 'Coefficient': coefs})
     
     # Bar chart
-    fig_combined.add_trace(go.Bar(x=coef_df['Feature'], y=coef_df['Coefficient'], marker_color='royalblue'), row=1, col=1)
+    fig_combined.add_trace(go.Bar(x=coef_df['Feature'], y=coef_df['Coefficient'], marker_color='royalblue', name = "Feature Coefficients"), row=1, col=1)
     
     # Equation string
     equation_terms = [f"{coef:.2f}*{feat}" for coef, feat in zip(coefs, all_features)]
@@ -355,7 +355,7 @@ fig_combined.add_trace(go.Scatter(x=y_val, y=y_val_pred, mode='markers', name='V
 fig_combined.add_trace(go.Scatter(x=[y.min(), y.max()], y=[y.min(), y.max()], mode='lines', line=dict(color='red', dash='dash'), name='45-degree line'), row=1, col=2)
 
 fig_combined.update_xaxes(title_text="Feature", row=1, col=1)
-fig_combined.update_yaxes(title_text="Coefficient / Importance", row=1, col=1)
+fig_combined.update_yaxes(title_text="Coefficient Value", row=1, col=1)
 fig_combined.update_xaxes(title_text="Actual Values", row=1, col=2)
 fig_combined.update_yaxes(title_text="Predicted Values", row=1, col=2)
 fig_combined.update_layout(showlegend=True, height=500, width=1000)
