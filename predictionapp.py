@@ -20,7 +20,7 @@ pred_img = Image.open("pred.png")
 
 st.image(pred_img, caption="Supervised Learning", use_column_width=True)
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 st.title("Prediction App using Regression")
 st.write("##### Predict a numerical target variable with regression models and visualize the results!")
 
