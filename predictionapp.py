@@ -412,7 +412,7 @@ elif input_choice == "Upload CSV":
     else:
         # Use default test.csv if no upload
         test_df = pd.read_csv("test.csv")  # make sure this file exists
-
+        st.info("Using default sample dataset")
 # Fill missing values for numeric and categorical columns
 for col in X.columns:
     if col not in test_df.columns:
