@@ -1,0 +1,101 @@
+age,gender,city,education,annual_income
+56,Male,B,Secondary School,57640.0
+46,Female,B,ITE,58473.0
+32,Female,A,Diploma,59439.0
+25,Female,A,Bachelor,60292.0
+38,Male,A,Secondary School,51901.0
+56,Female,A,ITE,69194.0
+36,Male,B,ITE,58226.0
+40,Male,B,Diploma,60003.0
+28,Female,A,Secondary School,47351.0
+28,Female,A,Master,69049.0
+41,Male,A,ITE,65874.0
+53,Male,B,Secondary School,57668.0
+57,Female,B,Bachelor,76445.0
+41,Female,A,Diploma,67589.0
+20,Female,C,Master,58688.0
+39,Male,A,Secondary School,55352.0
+19,Male,C,ITE,43716.0
+41,Male,B,ITE,58565.0
+47,Male,A,Master,75431.0
+55,Male,A,Secondary School,61909.0
+19,Male,B,Secondary School,41462.0
+38,Female,B,Secondary School,50934.0
+50,Male,B,Secondary School,58274.0
+29,Male,B,ITE,51394.0
+39,Male,B,Secondary School,48210.0
+42,Female,B,Secondary School,53183.0
+44,Male,A,Diploma,64234.0
+59,Male,A,Bachelor,77101.0
+45,Female,A,Secondary School,55663.0
+33,Male,C,Secondary School,44277.0
+32,Male,B,Diploma,53913.0
+20,Male,C,Secondary School,40234.0
+54,Male,A,Secondary School,58689.0
+24,Male,C,Secondary School,43140.0
+38,Female,C,Secondary School,44750.0
+26,Female,A,Diploma,59564.0
+56,Female,B,Secondary School,58943.0
+35,Male,B,Diploma,55067.0
+21,Male,C,ITE,41414.0
+42,Male,A,Secondary School,57653.0
+31,Female,A,ITE,55397.0
+26,Male,B,Secondary School,43843.0
+43,Male,C,ITE,50066.0
+19,Female,A,Secondary School,46279.0
+37,Male,A,Secondary School,56241.0
+45,Female,C,ITE,58876.0
+24,Female,A,Secondary School,44770.0
+25,Female,B,Secondary School,44266.0
+52,Male,C,Secondary School,54984.0
+31,Male,B,Secondary School,43445.0
+34,Male,B,Bachelor,63361.0
+53,Male,A,Secondary School,62642.0
+57,Male,B,ITE,66029.0
+21,Male,B,ITE,44278.0
+19,Male,A,Diploma,51775.0
+23,Female,A,Secondary School,47081.0
+59,Male,C,Secondary School,58766.0
+21,Female,B,Master,56992.0
+46,Male,A,Diploma,62087.0
+35,Male,C,Bachelor,60347.0
+43,Male,C,Secondary School,48321.0
+51,Female,B,Secondary School,55903.0
+27,Female,C,Secondary School,40677.0
+53,Female,A,ITE,67468.0
+31,Female,A,Secondary School,49707.0
+48,Male,B,Diploma,65535.0
+32,Female,C,Secondary School,41315.0
+25,Male,C,Master,53772.0
+31,Male,B,ITE,53747.0
+40,Female,C,Diploma,62286.0
+57,Female,C,Secondary School,55815.0
+38,Female,C,ITE,52499.0
+33,Female,C,Diploma,55149.0
+35,Female,B,Secondary School,51851.0
+41,Female,B,Secondary School,53278.0
+43,Female,A,Master,76492.0
+42,Female,C,Diploma,59111.0
+58,Male,C,Secondary School,57120.0
+46,Female,A,Secondary School,54121.0
+32,Female,A,ITE,54233.0
+18,Male,B,Diploma,51772.0
+42,Female,B,Secondary School,51533.0
+24,Male,C,Secondary School,40089.0
+26,Male,A,Secondary School,44648.0
+41,Female,A,ITE,60391.0
+18,Male,B,Diploma,47076.0
+25,Male,A,Secondary School,47080.0
+41,Male,A,Bachelor,69126.0
+28,Male,B,ITE,46513.0
+34,Female,B,Secondary School,50139.0
+25,Male,A,Secondary School,46172.0
+52,Female,B,Secondary School,60722.0
+52,Male,B,Bachelor,74957.0
+50,Male,B,ITE,59241.0
+22,Male,A,ITE,48417.0
+59,Male,B,Diploma,68156.0
+56,Female,C,ITE,57827.0
+58,Female,B,Diploma,69156.0
+45,Male,C,Secondary School,53387.0
+24,Male,B,ITE,44170.0
