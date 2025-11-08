@@ -16,8 +16,8 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 st.set_page_config(layout="wide")
-st.title("Prediction App with Hyperparameter Tuning")
-st.write("Predict a numerical target variable with regression models and visualize the results!")
+st.title("Prediction App using Regression")
+st.write("##### Predict a numerical target variable with regression models and visualize the results!")
 
 # -------------------------------
 # Upload CSV or use sample
@@ -285,7 +285,7 @@ else:
     best_model = pipeline
 
 # -------------------------------
-# Comparison Table (Highlight "After Tuning")
+# Comparison Table 
 # -------------------------------
 baseline_model_pipeline = Pipeline([('preprocessor', preprocessor), ('model', models[best_model_name])])
 baseline_model_pipeline.fit(X_train, y_train)
@@ -314,7 +314,7 @@ st.dataframe(
 )
 
 # -------------------------------
-# Feature contributions / Coefficients + Predicted vs Actual (1x2)
+# Feature coef
 # -------------------------------
 st.write(f"## Feature Contributions & Predicted vs Actual for {selected_model_name}")
 
@@ -411,7 +411,7 @@ elif input_choice == "Upload CSV":
         test_df = pd.read_csv(uploaded_test)
     else:
         # Use default test.csv if no upload
-        test_df = pd.read_csv("test.csv")  # make sure this file exists
+        test_df = pd.read_csv("test.csv")  
         st.info("Using default sample dataset")
 # Fill missing values for numeric and categorical columns
 for col in X.columns:
@@ -449,3 +449,36 @@ if st.button("Predict"):
             st.error(f"Prediction failed: {e}")
     else:
         st.warning("No test data available. Please provide input manually or upload a CSV.")
+
+##################################################################################
+st.markdown("---")
+st.title("Check Out Jayelle's Portfolio!")
+
+st.markdown("""
+Welcome! Here are some of my personal websites and portfolio pages where you can learn more about me and my work:
+""")
+
+# List of links
+links = {
+    "My Website": "https://jayelle0609.github.io/jialing",
+    "Tableau Visualizations": "https://public.tableau.com/app/profile/jialingteo/vizzes",
+    "GitHub Portfolio": "https://github.com/jayelle0609/Portfolio",
+    "Linkedin" : "https://www.linkedin.com/in/jialingteo/",
+    "KMeans Clustering App (for interview)" : "jialingkmeans.streamlit.app"
+
+}
+
+for name, url in links.items():
+    st.markdown(f"- [{name}]({url})")
+
+st.markdown("""
+---
+*Feel free to reach out or explore more!*  
+<span style="font-size:10px;">
+[Email Me!](mailto:jayelleteo@gmail.com) | [WhatsApp Me!](https://wa.me/6580402496)
+</span>
+<br>
+<span style="font-size:12px; color:gray;">
+
+</span>
+""", unsafe_allow_html=True)
