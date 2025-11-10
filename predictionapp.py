@@ -19,6 +19,7 @@ from PIL import Image
 pred_img = Image.open("pred.png")
 
 st.image(pred_img, caption="Supervised Learning", use_column_width=True)
+st.caption("This app was created solely for an interview with PMO on 12-Nov-2025, for a research analytics position.")
 
 st.set_page_config(layout="centered")
 st.title("Prediction App using Regression")
@@ -469,7 +470,7 @@ links = {
     "Tableau Visualizations": "https://public.tableau.com/app/profile/jialingteo/vizzes",
     "GitHub Portfolio": "https://github.com/jayelle0609/Portfolio",
     "Linkedin" : "https://www.linkedin.com/in/jialingteo/",
-    "KMeans Clustering App (for interview)" : "jialingkmeans.streamlit.app"
+    "KMeans Clustering App (for PMO interview)" : "https://jialingkmeans.streamlit.app"
 
 }
 
