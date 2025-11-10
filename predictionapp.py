@@ -19,7 +19,7 @@ from PIL import Image
 pred_img = Image.open("pred.png")
 
 st.image(pred_img, caption="Supervised Learning", use_column_width=True)
-st.caption("This app was created solely for an interview with PMO on 12-Nov-2025, for a research analytics position.")
+st.caption("**This app was created solely for an interview with Prime Ministers Office on 12-Nov-2025, for a research analytics position.**")
 
 st.set_page_config(layout="centered")
 st.title("Prediction App using Regression")
