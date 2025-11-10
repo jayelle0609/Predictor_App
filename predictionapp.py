@@ -458,7 +458,7 @@ if st.button("Predict"):
 
 ##################################################################################
 st.markdown("---")
-st.title("Check Out Jayelle's Portfolio!")
+st.title("Check Out Jia Ling's Portfolio!")
 
 st.markdown("""
 Welcome! Here are some of my personal websites and portfolio pages where you can learn more about me and my work:
